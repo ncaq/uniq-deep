@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                uniq-deep
-version:             0.1.0.0
+version:             1.0.0.0
 synopsis:            uniq-deep
 -- description:
 homepage:            https://github.com/ncaq/uniq-deep
