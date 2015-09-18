@@ -2,10 +2,15 @@ import qualified Data.ByteString.Char8 as B
 import qualified Data.Set              as S
 
 main :: IO ()
-main = B.getContents >>= mapM_ B.putStrLn . uniqDeep S.empty . B.lines
+main = uniqDeep
 
-uniqDeep :: S.Set B.ByteString -> [B.ByteString] -> [B.ByteString]
-uniqDeep _ [] = []
-uniqDeep table (l : ls) = if S.member l table
-                          then uniqDeep table ls
-                          else l : uniqDeep (S.insert l table) ls
+uniqDeep :: IO ()
+uniqDeep = B.putStrLn . B.unlines . deleteDuplicate . B.lines =<< B.getContents
+
+deleteDuplicate :: [B.ByteString] -> [B.ByteString]
+deleteDuplicate = check S.empty
+  where check _ [] = []
+        check already (l : ls) | S.member l already =
+                                 check already ls
+                               | otherwise =
+                                 l : check (S.insert l already) ls
