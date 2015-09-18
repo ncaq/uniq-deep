@@ -1,11 +1,10 @@
-import qualified Data.Set     as S
-import qualified Data.Text    as T
-import qualified Data.Text.IO as T
+import qualified Data.ByteString.Char8 as B
+import qualified Data.Set              as S
 
 main :: IO ()
-main = T.getContents >>= mapM_ T.putStrLn . uniqDeep S.empty . T.lines
+main = B.getContents >>= mapM_ B.putStrLn . uniqDeep S.empty . B.lines
 
-uniqDeep :: S.Set T.Text -> [T.Text] -> [T.Text]
+uniqDeep :: S.Set B.ByteString -> [B.ByteString] -> [B.ByteString]
 uniqDeep _ [] = []
 uniqDeep table (l : ls) = if S.member l table
                           then uniqDeep table ls
