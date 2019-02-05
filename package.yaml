@@ -1,5 +1,5 @@
 name: uniq-deep
-version: 1.1.0.0
+version: 1.1.1
 synopsis: uniq-deep
 description: alternative of unix uniq command. 'uniq-deep' detect repeated lines unless they are adjacent.
 github: ncaq/uniq-deep
