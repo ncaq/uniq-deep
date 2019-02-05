@@ -10,9 +10,9 @@ copyright: © ncaq
 license: PublicDomain
 
 dependencies:
-  - base
-  - containers
+  - base >= 4.7 && < 5
   - bytestring
+  - containers
 
 executables:
   uniq-deep:
