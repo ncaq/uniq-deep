@@ -5,12 +5,13 @@ main :: IO ()
 main = uniqDeep
 
 uniqDeep :: IO ()
-uniqDeep = B.putStrLn . B.unlines . deleteDuplicate . B.lines =<< B.getContents
+uniqDeep = B.getContents >>= B.putStrLn . B.unlines . deleteDuplicate . B.lines
 
 deleteDuplicate :: [B.ByteString] -> [B.ByteString]
 deleteDuplicate = check S.empty
-  where check _ [] = []
-        check already (l : ls) | S.member l already =
-                                 check already ls
-                               | otherwise =
-                                 l : check (S.insert l already) ls
+
+check :: S.Set B.ByteString -> [B.ByteString] -> [B.ByteString]
+check _ [] = []
+check already (l : ls)
+  | l `S.member` already = check already ls
+  | otherwise            = l : check (S.insert l already) ls
