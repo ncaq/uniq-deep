@@ -1,16 +1,3 @@
-*.aux
-*.chi
-*.chs.h
-*.dyn_hi
-*.dyn_o
-*.hi
-*.hp
-*.o
-*.prof
+*.cabal
 
 .stack-work/
-dist/
-
-.hpc
-.hsenv
-.virtualenv

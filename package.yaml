@@ -1,0 +1,25 @@
+name: uniq-deep
+version: 1.1.0.0
+synopsis: uniq-deep
+description: alternative of unix uniq command. 'uniq-deep' detect repeated lines unless they are adjacent.
+github: ncaq/uniq-deep
+category: Console
+author: ncaq
+maintainer: ncaq@ncaq.net
+copyright: © ncaq
+license: PublicDomain
+
+dependencies:
+  - base
+  - containers
+  - bytestring
+
+executables:
+  uniq-deep:
+    main: src/Main.hs
+    ghc-options:
+      - -Wall
+      - -fwarn-tabs
+      - -threaded
+      - -O2
+      - -with-rtsopts=-N
