@@ -1,3 +1,5 @@
+{-# LANGUAGE Safe #-}
+
 module Main (main) where
 
 import qualified Data.ByteString.Char8 as B
