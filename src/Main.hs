@@ -1,3 +1,5 @@
+module Main (main) where
+
 import qualified Data.ByteString.Char8 as B
 import qualified Data.Set              as S
 
