@@ -14,6 +14,7 @@ uniqDeep = B.getContents >>= B.putStrLn . B.unlines . deleteDuplicate . B.lines
 deleteDuplicate :: [B.ByteString] -> [B.ByteString]
 deleteDuplicate = check S.empty
 
+-- | リストの遅延評価を活かして欲しいのでfold系を安易に使いたくないので愚直に再帰
 check :: S.HashSet B.ByteString -> [B.ByteString] -> [B.ByteString]
 check _ [] = []
 check already (l : ls)
