@@ -1,5 +1,5 @@
 name: uniq-deep
-version: 1.2.0
+version: 1.2.1
 synopsis: uniq-deep
 description: alternative of unix uniq command. 'uniq-deep' detect repeated lines unless they are adjacent.
 github: ncaq/uniq-deep
@@ -11,21 +11,12 @@ license: MIT
 
 ghc-options:
   - -Wall
-  # - -Wall-missed-specialisations
+  - -Wcompat
   - -Widentities
-  # - -Wimplicit-prelude
   - -Wincomplete-record-updates
   - -Wincomplete-uni-patterns
-  # - -Wmissed-specialisations
-  # - -Wmissing-export-lists
-  - -Wmissing-exported-signatures
-  - -Wmissing-home-modules
-  # - -Wmissing-import-lists
-  # - -Wmissing-local-signatures
-  # - -Wmonomorphism-restriction
-  # - -Wpartial-fields
+  - -Wpartial-fields
   - -Wredundant-constraints
-  - -Wcompat
   - -O2
   - -threaded
   - -rtsopts
