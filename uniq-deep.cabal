@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 49472ffbe57791ed0563d1c7a80d28904b366902db917b21ca647826485f01fe
+
+name:           uniq-deep
+version:        1.2.0
+synopsis:       uniq-deep
+description:    alternative of unix uniq command. 'uniq-deep' detect repeated lines unless they are adjacent.
+category:       Console
+homepage:       https://github.com/ncaq/uniq-deep#readme
+bug-reports:    https://github.com/ncaq/uniq-deep/issues
+author:         ncaq
+maintainer:     ncaq@ncaq.net
+copyright:      © ncaq
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/ncaq/uniq-deep
+
+executable uniq-deep
+  main-is: src/Main.hs
+  other-modules:
+      Paths_uniq_deep
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , unordered-containers
+  default-language: Haskell2010
